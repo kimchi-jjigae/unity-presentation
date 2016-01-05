@@ -30,4 +30,9 @@ public class EnemyController : MonoBehaviour {
         Instantiate(bullet, transform.position - yOffset, transform.rotation);
         Instantiate(bullet, transform.position + yOffset, transform.rotation);
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Destroy(other.gameObject);
+    }
 }
