@@ -9,19 +9,23 @@ public class EnemyController : MonoBehaviour {
     public float shipSpeed;
 
     Vector2 screenBounds;
+    float lastTime;
+    public float bulletRate;
 
 	void Start() {
 	    rigidbody2d = GetComponent<Rigidbody2D>();
         rigidbody2d.velocity = new Vector2(shipSpeed, 0.0f);
+        lastTime = Time.time;
 	}
 
 	void Update () {
 	    if(transform.position.x < -10.0f ||
-	       transform.position.x >  10.0f) {
+	       transform.position.x >  12.0f) {
             Destroy(gameObject);
         }
-        if(Random.value < 0.05f) {
+        if(Time.time - lastTime > bulletRate) {
             ShootBullet();
+            lastTime = Time.time;
         }
 	}
 
