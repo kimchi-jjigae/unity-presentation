@@ -11,10 +11,8 @@ GameObject:
   - 212: {fileID: 21282406}
   - 61: {fileID: 6140152}
   - 50: {fileID: 5085496}
-  - 114: {fileID: 11453926}
   - 114: {fileID: 11413302}
   - 114: {fileID: 11414240}
-  - 114: {fileID: 11426100}
   m_Layer: 0
   m_Name: ninja_sprite_for_platformer_game_by_solowej-d8n5voo
   m_TagString: Untagged
@@ -37,21 +35,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &115962
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 470820}
-  m_Layer: 0
-  m_Name: groundcheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &451488
 Transform:
   m_ObjectHideFlags: 1
@@ -63,21 +46,8 @@ Transform:
   m_LocalScale: {x: 0.2081935, y: 0.2081935, z: 0.2081935}
   m_Children:
   - {fileID: 489006}
-  - {fileID: 470820}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &470820
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115962}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.64, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 451488}
-  m_RootOrder: 1
 --- !u!4 &489006
 Transform:
   m_ObjectHideFlags: 1
@@ -147,36 +117,8 @@ MonoBehaviour:
   jump: 0
   moveForce: 365
   maxSpeed: 5
-  jumpForce: 5000
+  jumpForce: 3500
   groundCheck: {fileID: 489006}
---- !u!114 &11426100
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8b0ee5f42090472fa11d4e3fa19441f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11453926
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 072ce22d920e24dbf8f228cf98971d96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  facingRight: 1
-  jump: 0
-  moveForce: 365
-  maxSpeed: 5
-  jumpForce: 4000
-  groundCheck: {fileID: 470820}
 --- !u!212 &21282406
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -203,7 +145,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 338934199
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5983642c4882949138eb8e371e6a23a5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a700c4ba3d8e47fb912e565ab2bad15, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
