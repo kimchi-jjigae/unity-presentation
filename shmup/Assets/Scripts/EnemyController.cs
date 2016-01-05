@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BulletPhysics : MonoBehaviour {
+public class EnemyController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

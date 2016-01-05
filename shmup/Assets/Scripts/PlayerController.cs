@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
+    public Transform bullet;
+
     Rigidbody2D rigidbody2d;
     public float speedScalar;
 
@@ -25,4 +27,16 @@ public class PlayerController : MonoBehaviour {
         float yPos = Mathf.Clamp(rigidbody2d.position.y, -screenBounds.y, screenBounds.y);
         rigidbody2d.position = new Vector2(xPos, yPos);
 	}
+
+    void Update() {
+        if(Input.GetKeyDown("space")) {
+            ShootBullet();
+        }
+    }
+
+    void ShootBullet() {
+        Vector3 yOffset = new Vector3(0.0f, 0.5f, 0.0f);
+        Instantiate(bullet, transform.position - yOffset, transform.rotation);
+        Instantiate(bullet, transform.position + yOffset, transform.rotation);
+    }
 }
