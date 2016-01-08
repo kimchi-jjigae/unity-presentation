@@ -1,0 +1,109 @@
+* Unity Basic
+  - Scene, hierarchy, file list
+* Background
+  - import asset
+  - drag create
+* Player objects
+  - import
+  - explain game object inspector with controllers
+  - add rigid body, fix gravity
+* Player controls
+  - player controller script
+    . public float speed = 10
+    . float v = Input.GetAxis("Vertical")
+    . RigidBody2D.velocity = new Vector3(h, v, 0) * speed
+* Firing
+  - bullet object prefab
+    . import asset
+    . add rigid body
+  - bullet controller script
+    . public Vector3 direction = 1
+    . public float speed = 12
+    . rigidbody.velocity = direction * speed
+  - make prefab
+    . what is a prefab
+  - PlayerController
+    . if(Input.GetKeyDown("space")
+    . BroadcastMessage("fire", null, SendMessageOptions.DontRequireReceiver)
+  - FireController
+    . public GameObject bulletPrefab
+    . void fire()
+    . Instantiate(bulletPrefab, position, rotation)
+    . float yOffset = 0.3
+    . Instantiate(b, new Vector3(pos.x, pos.y +- offset, rot)
+    . drag prefab
+* Bullet disappearance
+  - DestroyAfterTime
+    . public float seconds
+    . Destroy(gameObject, seconds)
+  - add seconds = 5
+* Enemy objects
+  - graphics etc
+  - rigid body, gravity
+* Enemy controller
+  - Enemy controller script
+    . public float speed = 5
+    . rigidbody.velocity = new Vector3(-1, 0 ,0) * speed
+* Enemy disappearance
+  - DestroyAfterTime = 10
+* Enemy firing
+  - copy player bullet prefab
+    . direction -1
+    . speed 9
+  - Reuse fire controller
+    . enemy bullet
+  - Enemy Controller
+    . if(Random.value < 0.02f)
+    . BroadcastMessage("fire", null, SendMessageOptions.DontRequireReceiver
+* Collisions
+  - Layers
+    . Player, PlayerBullets, Enemy, EnemyBullets
+    . matrix: pl -> eb, pb -> e
+    . set objects
+  - Collision shapes
+    . bullets: circle collider, trigger
+    . ship: polygon collider
+  - BulletController
+    . OnTriggerEnter2D(Collider2D other)
+    . Health health = other.gameObject.GetC
+    . if(health) health.damage(1)
+    . Destroy(g)
+* Health
+  - Script
+    . public int startHealth
+    . int current
+    . Start() curr = start
+    . public void damage(int)
+    . curre -= amout
+    . BroadcastMessage("died", null, Opts)
+  - Add to enemy/player
+  - PlayerController/EnemyController
+    . public void died() destroyed
+* Enemy spawning
+  - RandomSpawner
+    . public GameObject prefabToSpawn
+    . if(Random.value < 0.01)
+    . Instatniate(pr, pos, rot)
+  - Object
+    . Add script
+  - Make Enemy prefab
+  - Add spawners
+* Explosions
+  - SpawnOnDie
+    . public GameObject prefabToSpawn
+    . public void died() Instantiate(pre, pos, rot)
+  - Object
+    . particle system
+      duration 0.4
+      lifetime 0.3
+      start speed 3
+      start size 0.1
+      color <blue>
+      --
+      rate 0 <Time>
+      bursts 0, 500, 500
+      --
+      sphere 1
+    .destroy after time 3
+  - make prefab
+  - add spawn on die to ships 
